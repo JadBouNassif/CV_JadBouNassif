@@ -97,10 +97,9 @@
 
         const element = document.getElementById("html-to-pdf");
 
-        // Create canvas from your HTML
         const canvas = await html2canvas(element, {
-          scale: 2, // Better quality
-          useCORS: true, // If you're using any external images or fonts
+          scale: 2,
+          useCORS: true,
         });
 
         const imgData = canvas.toDataURL("image/png");
@@ -108,10 +107,9 @@
         const pdf = new jsPDF({
           orientation: "portrait",
           unit: "px",
-          format: [canvas.width, canvas.height], // Match canvas size to PDF
+          format: [canvas.width, canvas.height],
         });
 
-        // Add image with NO margins
         pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
         pdf.save("JadBouNassif_CV.pdf");
       }
