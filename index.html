@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jad Bou Nassif</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <paper id="html-to-pdf">
+      <yellow_T></yellow_T>
+      <img class="me" src="me.png" />
+      <sidebar class="container">
+        <ID>
+          <div id="Fname">JAD</div>
+          <div id="Lname">BOU NASSIF</div>
+          <div id="Major">Electrical Engineering Student</div>
+        </ID>
+        <Contacts>
+          <header>Contacts</header>
+          <div class="container2"><img
+            class="logo"
+            src="number.png"
+          />+961 71 351 282</div>
+          <div class="container2"><img
+            class="logo"
+            src="mail.png"
+          /><a>jadbounassif0@gmail.com</a></div>
+          <div class="container2"><img
+            class="logo"
+            src="location.png"
+          />Dawhet Aramoun, Choueifat El Aamroussieh</div>
+        </Contacts>
+        <Skills>
+          <header>Skills</header>
+          <ul>
+            <li>Programming: C, C#, MATLAB</li>
+            <li>Embedded Systems: Arduino</li>
+            <li>Simulation Tools: Simulink, Proteus</li>
+            <li>Networking Basics</li>
+          </ul>
+        </Skills>
+      </sidebar>
+      <MainB class="container">
+        <Profile>
+          <header>Profile</header>
+          <div>
+            Enthusiastic and driven university student, Eager to apply
+            theoretical knowledge to real-world challenges in a dynamic
+            internship environment. Highly motivated to gain practical
+            experience in the field while contributing to innovative projects
+            and expanding technical skills. In addition to my technical
+            pursuits, I have a strong passion for weightlifting, which has
+            helped me develop discipline, perseverance, and a commitment to
+            continuous improvement. I also enjoy strategy games, where I apply
+            my problem-solving and analytical thinking skills to challenge
+            myself by solving problems and thinking ahead to outsmart opponents.
+          </div>
+        </Profile>
+        <Education>
+          <header>Education</header>
+          <date>2022 - 2025</date>
+          <div>Lebanese University Factulry of Engeneering</div>
+          <date>2006-2021</date>
+          <div class="container2">
+            Amjad High School
+            <img
+              class="logo"
+              src="Cognia_ACCRED-Badge-GREY-684x684-1-600x600.png"
+            />
+          </div>
+        </Education>
+        <ExtCur id>
+          <header>Extra Curicular Work</header>
+          <div id="container">
+            CCNA: Introduction to Networks<a
+              href="CCNAITNUpdated20250423-27-wwyrmn.pdf"
+              target="_blank"
+              >(Download Certificate)</a
+            >
+            IEEE Web Development Course<a
+              href="jad bou nassif.pdf"
+              target="_blank"
+              >(Download Certificate)</a
+            >
+          </div>
+        </ExtCur>
+      </MainB>
+      <yellow_B></yellow_B>
+    </paper>
+    <button onclick="generatePDF()">Print to PDF</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+      async function generatePDF() {
+        const { jsPDF } = window.jspdf;
+
+        const element = document.getElementById("html-to-pdf");
+
+        // Create canvas from your HTML
+        const canvas = await html2canvas(element, {
+          scale: 2, // Better quality
+          useCORS: true, // If you're using any external images or fonts
+        });
+
+        const imgData = canvas.toDataURL("image/png");
+
+        const pdf = new jsPDF({
+          orientation: "portrait",
+          unit: "px",
+          format: [canvas.width, canvas.height], // Match canvas size to PDF
+        });
+
+        // Add image with NO margins
+        pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
+        pdf.save("JadBouNassif_CV.pdf");
+      }
+    </script>
+  </body>
+</html>

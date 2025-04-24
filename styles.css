@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 4%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+paper {
+  width: 21cm;
+  height: 29.7cm;
+  background-color: #fff;
+  box-shadow: 0 0 3% rgba(0, 0, 0, 0.1);
+  padding: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+yellow_T {
+  width: 10%;
+  height: 20%;
+  background-color: rgb(255, 183, 0);
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+yellow_B {
+  width: 60%;
+  height: 5%;
+  background-color: rgb(255, 183, 0);
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+
+sidebar {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 2%;
+  height: 60%;
+  width: 30%;
+  position: absolute;
+  bottom: 4%;
+  left: 4%;
+}
+
+MainB {
+  background-color: rgba(255, 255, 255, 1);
+  padding: 4%;
+  height: 90%;
+  width: 60%;
+  position: absolute;
+  bottom: 4%;
+  right: 4%;
+}
+.me {
+  width: 30%;
+  margin: 0;
+  padding: 0;
+  border-radius: 1.6%;
+  box-shadow: 0 0 2% rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 7%;
+  left: 4%;
+}
+
+header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+  color: #2c3e50;
+  border-bottom: 0.10rem solid rgb(255, 183, 0);
+}
+
+ID,
+Contacts,
+Skills,
+Education,
+ExtCur {
+  margin-bottom: 4%;
+}
+
+
+Profile {
+  padding: 3%;
+}
+
+Profile div {
+  font-size: 1rem;
+  color: #555;
+}
+
+Contacts div {
+  font-size: 1rem;
+  margin-top: 5%;
+}
+
+Contacts a {
+  color: #3498db;
+  text-decoration: none;
+}
+Skills{
+  margin-bottom: 25%;
+}
+
+
+Education {
+  padding: 3%;
+}
+
+Education div {
+  margin-bottom: 5%;
+}
+
+Education date {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+
+ExtCur {
+  padding: 3%;
+}
+
+ExtCur a {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5%;
+  color: #3498db;
+  text-decoration: none;
+}
+
+
+
+#Fname{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000;
+}
+#Lname {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color:  rgb(255, 183, 0);
+}
+
+#Major {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+button {
+  position: fixed;
+  font-size: 16px;
+  padding: 8px 16px;
+  bottom: 4%;
+  right: 4%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.logo {
+  height: 2rem;
+  width: auto;
+}
+
+@media (max-width: 761.6%) {
+  sidebar {
+    width: 100%;
+    padding: 2%;
+  }
+
+  MainB {
+    width: 100%;
+    padding: 2%;
+    margin-left: 0;
+  }
+}
