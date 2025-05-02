@@ -18,18 +18,16 @@
         </ID>
         <Contacts>
           <header>Contacts</header>
-          <div class="container2"><img
-            class="logo"
-            src="number.png"
-          />+961 71 351 282</div>
-          <div class="container2"><img
-            class="logo"
-            src="mail.png"
-          /><a>jadbounassif0@gmail.com</a></div>
-          <div class="container2"><img
-            class="logo"
-            src="location.png"
-          />Dawhet Aramoun, Choueifat El Aamroussieh</div>
+          <div class="container2">
+            <img class="logo" src="number.png" />+961 71 351 282
+          </div>
+          <div class="container2">
+            <img class="logo" src="mail.png" /><a>jadbounassif0@gmail.com</a>
+          </div>
+          <div class="container2">
+            <img class="logo" src="location.png" />Dawhet Aramoun, Choueifat El
+            Aamroussieh
+          </div>
         </Contacts>
         <Skills>
           <header>Skills</header>
@@ -60,7 +58,7 @@
         <Education>
           <header>Education</header>
           <date>2022 - 2025</date>
-          <div>Lebanese University Faculty of Engineering</div>
+          <div>Lebanese University Faculty of Engeneering</div>
           <date>2006-2021</date>
           <div class="container2">
             Amjad High School
@@ -73,9 +71,10 @@
         <ExtCur id>
           <header>Extra Curicular Work</header>
           <div id="container">
-            CCNA: Introduction to Networks<a
-              href="CCNAITNUpdated20250423-27-wwyrmn.pdf"
-              target="_blank"
+            <div class="container2">
+              CCNA: Introduction to Networks<img class="logo" src="Badge.png" />
+            </div>
+            <a href="CCNAITNUpdated20250423-27-wwyrmn.pdf" target="_blank"
               >(Download Certificate)</a
             >
             IEEE Web Development Course<a
@@ -97,9 +96,10 @@
 
         const element = document.getElementById("html-to-pdf");
 
+        // Create canvas from your HTML
         const canvas = await html2canvas(element, {
-          scale: 2,
-          useCORS: true,
+          scale: 2, // Better quality
+          useCORS: true, // If you're using any external images or fonts
         });
 
         const imgData = canvas.toDataURL("image/png");
@@ -107,9 +107,10 @@
         const pdf = new jsPDF({
           orientation: "portrait",
           unit: "px",
-          format: [canvas.width, canvas.height],
+          format: [canvas.width, canvas.height], // Match canvas size to PDF
         });
 
+        // Add image with NO margins
         pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
         pdf.save("JadBouNassif_CV.pdf");
       }
